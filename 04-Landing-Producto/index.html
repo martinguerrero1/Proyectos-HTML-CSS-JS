@@ -4,57 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teclado Appwise Ninja</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <h1>Teclado Mecánico Appwise Ninja</h1>
         <p>Escribe a la velocidad de la luz. Sin distracciones.</p>
-        <button>Comprar Ahora - $99</button>
+        <button type="button" class="btn-Comprar">Comprar Ahora - $99</button>
     </header>
 
-     <section>
-        <video src="assets/promo.mp4" autoplay muted loop></video>
-     </section>
+     <main>
+         <section class="hero">
+            <video src="assets/promo.mp4" autoplay muted loop></video>
+         </section>
 
-     <section>
-        <h2>Compara nuestro modelos</h2>
-        <table border="1px black">
-            <thead>
-                <tr>
-                    <th>Caracteristica</th>
-                    <th>Modeo Básico</th>
-                    <th>Modelo Ninja</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                <tr>
-                    <td>Switches</td>
-                    <td>Rojo</td>
-                    <td>Marrón</td>
-                </tr>
-                <tr>
-                    <td>Retroiluminación</td>
-                    <td>No</td>
-                    <td>Si</td>
-                </tr>
-                <tr>
-                    <td>Precio</td>
-                    <td>65000</td>
-                    <td>80000</td>
-                </tr>
-            </tbody>
-        </table>
-     </section>
-
-     <section>
-        <h2>Mira la reseña completa</h2>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/adC_M1R3W28?si=w0rKb0zFu5WA4Gx7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-     </section>
+         <section class="tabla">
+            <h2>Compara nuestro modelos</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Caracteristica</th>
+                        <th>Modeo Básico</th>
+                        <th>Modelo Ninja</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="caracteristica">Switches (Interruptores)</td>
+                        <td>Membrana</td>
+                        <td>Mecánico (Red lineal)</td>
+                    </tr>
+                    <tr>
+                        <td class="caracteristica">Retroiluminación</td>
+                        <td>Color fijo</td>
+                        <td>RGB personalizable por tecla</td>
+                    </tr>
+                    <tr>
+                        <td class="caracteristica">Precio</td>
+                        <td>$29.99</td>
+                        <td>$99.99</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+         <section class="info">
+            <h2>Mira la reseña completa</h2>
+            <video src="assets/promo.mp4" controls></video>
+         </section>
+     </main>
 
      <footer>
-        <a href="https://www.argentina.gob.ar/terminos-y-condiciones" >Términos de Garantía</a>
-        <a href="https://www.argentina.gob.ar/educacion/planied/conectar-igualdad/soporte">Soporte Técnico</a>
+        <p class="refs">
+            <a href="https://www.argentina.gob.ar/terminos-y-condiciones" >Términos de Garantía</a>
+            |
+            <a href="https://www.argentina.gob.ar/educacion/planied/conectar-igualdad/soporte">Soporte Técnico</a>
+        </p>
+        <p class="copyright">
+            © 2026 Appwise Gear.
+        </p>
      </footer>
 </body>
 </html>

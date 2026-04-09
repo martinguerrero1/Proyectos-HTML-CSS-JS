@@ -1,0 +1,122 @@
+*{
+    text-decoration: none;
+    list-style: none;
+    color: inherit;
+    font-family: monospace;
+    margin: 0;
+}
+
+:root{
+    --background:  #0d1117;
+    --specialText: #00fc00;
+    --card: #161b22;
+    --normalText: white;
+}
+
+body{
+    background-color: var(--background);
+    display: flex;
+    justify-content: center;
+}
+
+.conteiner{
+    width: 60vw;
+}
+/* HEADER */
+
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    height: 15vh;
+
+    border-bottom: var(--specialText) 3px dotted;
+}
+
+ul{
+    display: flex;
+    gap: 20px;
+}
+
+.header-tittle{
+    color: var(--specialText);
+    text-shadow: 0 0 6px rgba(0, 252, 0, 0.6);
+}
+
+li{
+    border: #00fc00 2px solid;
+    color: var(--specialText);
+    padding: 5px 10px;
+}
+
+/* MAIN */
+
+main{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-bottom: 30px;
+    border-bottom: var(--specialText) 3px dotted;
+}
+
+article{
+    /* card grande */
+    width: 60%;
+    color: var(--normalText);
+    background-color: var(--card);
+    font-size: large;
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    border: #212935 2px solid;
+}
+
+.photo{
+    padding: 10px;
+    margin: auto;
+    border: #00fc00 3px solid;
+    border-radius: 5px;
+    width: fit-content;
+    padding: 10xp;
+}
+
+figcaption{
+    text-align: center;
+    color: var(--specialText);
+}
+
+aside{
+    /* card chica */
+    height: fit-content;
+    width: 30%;
+    background-color: var(--card);
+    border: #212935 2px solid;
+    padding: 20px;
+}
+
+aside h3{
+    color: var(--specialText)
+}
+
+hr{
+    border: none;
+    height: 2px;
+    background-color: #00fc00;
+    margin: 5px;
+}
+
+aside p{
+    color: white;
+}
+
+
+footer{
+    color: #00fc00;
+    text-align: center;
+    margin: 15px;
+}

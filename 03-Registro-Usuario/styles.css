@@ -1,0 +1,100 @@
+*{
+    text-decoration: none;
+    list-style: none;
+    color: inherit;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;;
+    margin: 0
+}
+
+:root{
+    --background1:  #6878e1;
+    --background2:  #754ea6;
+
+    --primaryText: #fff;
+    --secondaryText: #181818;
+    --tertiaryText: #464646;
+
+    --button: #667eea;
+}
+
+body{
+    background: linear-gradient(45deg, var(--background1), var(--background2));
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.container{
+    width: 500px;
+    height: fit-content;
+
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+
+    gap: 20px;
+}
+
+h1{
+    color: var(--primaryText);
+    text-align: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 50px;
+}
+
+form .especialidad{
+    gap: 10px;
+    color: var(--tertiaryText);
+    font-weight: 100;
+}
+
+form label,select{
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+form input{
+    margin-bottom: 20px;
+}
+
+form .input-text{
+    height: 50px;
+    border: rgb(214, 214, 214) 1px solid;
+    border-radius: 5px;
+    padding: 0 15px;
+}
+
+select{
+    height: 40px;
+    border: rgb(214, 214, 214) 1px solid;
+    border-radius: 5px;
+    padding: 0 15px;
+}
+
+.terms{
+    margin: 20px 0;
+}
+
+button{
+    background-color:var(--button);
+
+    height: 50px;
+    border-radius: 5px;
+    margin-top: 10px;
+
+    color: var(--primaryText);
+    font-weight: 800;
+    font-size: large;
+    border: none;
+}
+
+.especialidad-label{
+    margin-top: 10px;
+}
