@@ -1,41 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <main>
-        <h1>Mis tareas pendientes</h1>
+    <sectio class="card">
+        <h1 class="tittle">Mis tareas pendientes</h1>
 
-        <div>
-            <input type="text" placeholder="¿Qué necesitas hacer hoy?">
-            <button type="button">Agregar tarea</button>
-        </div>
+        <form class="addTask" id="form">
+            <input type="text" placeholder="¿Qué necesitas hacer hoy?" id="inputTask">
+            <button type="submit">Agregar tarea</button>
+        </form>
 
-        <ul>
+        <ul class="tasks">
             <li>
-                <span>Sacar la basura</span>
-                <input type="checkbox">
-                <button>🗑️</button>
+                <span>
+                    <input class="checkbox" type="checkbox">
+                    <p>Estudiar etiquetas semánticas</p>
+                </span>
+                <button type="button">❌</button>
             </li>
             <li>
-                <span>Tender la ropa</span>
-                <input type="checkbox" checked>
-                <button>🗑️</button>
+                <span>
+                    <input class="checkbox" type="checkbox" checked>
+                    <p>Tomas 2 litros de agua</p>
+                </span>
+                <button>❌</button>
             </li>
             <li>
-                <span>Limpiar el piso</span>
-                <input type="checkbox">
-                <button>🗑️</button>
+                
+                <span>
+                    <input class="checkbox" type="checkbox">
+                    <p>Avanzar en el proyecto de Github</p>
+                </span>
+                <button>❌</button>
             </li>
-            <p>Tienes 2 tareas pendientes</p>
         </ul>
 
-        <button type="button">
-            Limpiar completadas
-        </button>
-    </main>
+        <div class="info">
+            <p>Tienes <span style="font-weight: bold;">2</span> tareas pendientes.</p>
+            <button type="button" class="clearCompleted">Limpiar completadas</button>
+        </div>
+    </section>
+
+
+    <script src="app.js"></script>
 </body>
 </html>
