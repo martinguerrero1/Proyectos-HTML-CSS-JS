@@ -6,8 +6,12 @@ const inputTask = document.getElementById("inputTask")
 //pizarron de tareas
 const board = document.querySelector(".tasks");
 
+//limpiar completadas
+const clearCompleted = document.querySelector(".clearCompleted")
+
 //buscamos las tareas en el LS o definimos un objeto vacio si no existe
 let localStorageTasks = JSON.parse(localStorage.getItem("Tasks")) || {};
+console.log(localStorageTasks);
 updateTasks(localStorageTasks);
 
 //agregar al form
@@ -24,7 +28,7 @@ form.addEventListener("submit", e => {
             localStorage.setItem("IDs", "1");
 
             //agregamos la primer tarea como objeto
-            localStorage.setItem("Tasks", JSON.stringify({1: newTask}));
+            localStorage.setItem("Tasks", JSON.stringify([{id: 1, task: newTask, completed: false}]));
         }
         else{
             //CAMBIAR EL ITEM IDS PARA EL SIGUIENTE
@@ -34,7 +38,7 @@ form.addEventListener("submit", e => {
             //obtenemos las tasks como objeto
             const tasks = JSON.parse(localStorage.getItem("Tasks"));
             //agregamos la nueva task con spread
-            localStorage.setItem("Tasks", JSON.stringify({...tasks, [ID]: newTask}))
+            localStorage.setItem("Tasks", JSON.stringify([...tasks,{id: ID, task: newTask, completed: false}]))
         }
     }
 
@@ -46,42 +50,61 @@ form.addEventListener("submit", e => {
 
 //escuchamos el pizarron para ver cuando haya un click en el
 board.addEventListener("click", e => {
+    //obtengo el id del elemento clickeado
+    let ID = Number(e.target.id);
+    //busco las tareas en el localstorage
+    let tasks = JSON.parse(localStorage.getItem("Tasks"));
+
     //verifica si el click se hace sobre un elemento que contenga esa clase
     if(e.target.classList.contains("btn-DeleteTask")){
-        //obtengo el id del boton clickeado
-        let ID = e.target.id;
 
-        //busco los tasks, elimino el que coincide con el id de el boton seleccionado y luego lo vuelvo a guardar
-        const tasks = JSON.parse(localStorage.getItem("Tasks"));
-        delete tasks[ID];
+        //filtro todas las tareas menos la clickeada en el boton de eliminar y las vuelvo a guardar en el ls (sin la seleccionada)
+        tasks = tasks.filter(object => object.id !== ID);
         localStorage.setItem("Tasks", JSON.stringify(tasks));
 
         //actualizamos las tareas
         let localStorageTasks = JSON.parse(localStorage.getItem("Tasks"));
         updateTasks(localStorageTasks);
     }
+
+    //verifica si esta checkeado
+    if(e.target.classList.contains("checkbox")){
+        let objIndex = tasks.findIndex(obj => obj.id === ID);
+        tasks[objIndex].completed = tasks[objIndex].completed ? false : true;
+        localStorage.setItem("Tasks", JSON.stringify(tasks));
+    }
 });
 
+clearCompleted.addEventListener("click", e => {
+    let tasks = JSON.parse(localStorage.getItem("Tasks"));
+
+    //filtro las tasks no completadas (propiedad completed === false) y las guardo
+    tasks = tasks.filter(obj => !obj.completed);
+    localStorage.setItem("Tasks", JSON.stringify(tasks));
+
+    //actualizo el board
+    updateTasks(tasks);
+})
 
 
 //funcion para actualizar las tareas en el pizarron
 function updateTasks(tasks){
     //borro todas las tareas en el pizarron
     board.textContent = ''
-    //obtengo el array de las tareas disponibles en LS
-    const valuesTasks = Object.entries(tasks);
 
-
+    let totalTasks = 0
     //itero cad una de las tareas y las agrego al elemento board en el html
-    valuesTasks.forEach(task => {
+    tasks.forEach(task => {
+        totalTasks += 1;
         board.innerHTML +=  `
             <li>
                 <span>
-                    <input class="checkbox" type="checkbox">
-                    <p>${task[1]}</p> 
+                    <input id=${task.id} class="checkbox" type="checkbox" ${task.completed ? "checked" : ""}>
+                    <p>${task.task}</p> 
                 </span>
-                <button id=${task[0]} class="btn-DeleteTask" type="button">❌</button>
+                <button id=${task.id} class="btn-DeleteTask" type="button">❌</button>
             </li>
         `
+        document.getElementById("pendingTasks").textContent = totalTasks;
     });
 }
