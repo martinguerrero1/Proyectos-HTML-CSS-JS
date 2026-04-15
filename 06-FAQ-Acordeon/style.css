@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    border: 0;
+    color: inherit;
+}
+
+body{
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+    background-color: #e7e7e7;
+    height: 100vh;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    width: 50%;
+    min-width: 500px;
+    padding: 40px;
+    margin: 50px auto;
+
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgb(163, 163, 163);
+    
+    background-color: #ffffff;
+}
+
+main div{
+    text-align: center;
+}
+
+.tittle{
+    margin: 10px;
+    color: #054f68;
+}
+
+.description{
+    color: #505050;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;    
+    width: 100%;
+}
+
+details{
+    background-color: #ffffff;
+    border: 1px #8d8d8d solid;
+    border-radius: 10px;
+
+    color: #505050;
+    width: 100%;
+    
+    overflow: hidden;
+}
+
+summary{
+    text-align: start;
+    align-content: center;
+    display: flex;
+    justify-content: space-between;
+    
+    height: 60px;
+    padding: 15px;
+
+    color: #2e2e2e;
+    font-weight: 500;
+    background-color: #e7e7e7;
+}
+
+.answer{
+    padding: 20px 15px;
+}
+
+details:open{
+    background-color: #ffffff;
+    border: 1px #0086b3 solid;
+    border-radius: 10px;
+
+    color: #505050;
+
+    width: 100%;
+}
+
+details:open summary{
+    text-align: start;
+    align-content: center;
+    
+    height: 60px;
+    padding: 15px;
+
+    color: #0086b3;
+    font-weight: 500;
+    background-color: #e5f8ff;
+}
+
+.masMenos{
+    font-size: larger;
+}

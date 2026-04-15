@@ -4,30 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Centro de Ayuda - Appwise</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <main>
         <div>
-            <h1>Preguntas frecuentes</h1>
-            <p>Resuelve tus dudas rápidamente.</p>
+            <h1 class="tittle">Preguntas frecuentes</h1>
+            <p class="description">Resuelve tus dudas rápidamente.</p>
         </div>
 
-        <section>
-            <details open>
-                <summary>¿Necesito experiencia previa para hacer el curso?</summary>
-                <p>No, empezamos desde cero. Solo necesitas una computadora y ganas de aprender.</p>
+        <section class="FAQ">
+            <details open class="details">
+                <summary>¿Necesito experiencia previa para hacer el curso?<span class="masMenos">-</span></summary>
+                <p class="answer">No, empezamos desde cero. Solo necesitas una computadora y ganas de aprender.</p>
             </details>
 
-            <details>
-                <summary>¿Cuánto tiempo dura la carrera Full Stack?</summary>
-                <p>El programa completo dura 9 meses, con clases en vivo y proyectos prácticos semanales.</p>
+            <details class="details">
+                <summary>¿Cuánto tiempo dura la carrera Full Stack?<span class="masMenos">+</span></summary>
+                <p class="answer">El programa completo dura 9 meses, con clases en vivo y proyectos prácticos semanales.</p>
             </details>
 
-            <details>
-                <summary>¿Las clases quedan grabadas?</summary>
-                <p>¡Sí! Todas las clases se graban y se suben a la plataforma para que puedas repasarlas cuando quieras.</p>
+            <details class="details">
+                <summary>¿Las clases quedan grabadas?<span class="masMenos">+</span></summary>
+                <p class="answer">¡Sí! Todas las clases se graban y se suben a la plataforma para que puedas repasarlas cuando quieras.</p>
             </details>
         </section>
     </main>
+
+
+    <script>
+        const details = document.querySelectorAll(".details");
+        
+        // masMenos.textContent = '??';
+
+        details.forEach(detail => {
+            detail.addEventListener("toggle", event => {
+                const icono = event.target.querySelector(".masMenos");
+
+                if (event.target.open){
+                    console.log("abuerto");
+                    icono.textContent = '-';
+                }
+                else{
+                    console.log("CERRADO");
+                    icono.textContent = '+';
+                }
+            })
+
+        })
+    </script>
 </body>
 </html>
