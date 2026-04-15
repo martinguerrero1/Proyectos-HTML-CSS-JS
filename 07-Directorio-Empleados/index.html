@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Directorio de Empleado</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <main>
@@ -15,47 +16,40 @@
         <table border="1">
             <thead>
                 <tr>
-                    <td>ID</td>
-                    <td>Nombre</td>
-                    <td>Puesto</td>
-                    <td>Email</td>
+                    <td><h4>ID</h4></td>
+                    <td><h4>Nombre</h4></td>
+                    <td><h4>Puesto</h4></td>
+                    <td><h4>Email</h4></td>
                 </tr>
             </thead>
 
             <tbody>
                 <tr>
                     <td>#001</td>
-                    <td>Ana Gómez</td>
+                    <td class="nombre">Ana Gómez</td>
                     <td>Frontend Developer</td>
                     <td><a href="mailto:anagomez@gmail.com">anagomez@gmail.com</a></td>
                 </tr>
 
                 <tr>
                     <td>#002</td>
-                    <td>Carlos Pérez</td>
+                    <td class="nombre">Carlos Pérez</td>
                     <td>Backend Developer</td>
                     <td><a href="mailto:carlosperez@gmail.com">carlosperez@gmail.com</a></td>
                 </tr>
 
                 <tr>
                     <td>#003</td>
-                    <td>Lucía Fernández</td>
+                    <td class="nombre">Lucía Fernández</td>
                     <td>UI/UX Designer</td>
                     <td><a href="mailto:luciafernandez@gmail.com">luciafernandez@gmail.com</a></td>
-                </tr>
-
-                <tr>
-                    <td>#004</td>
-                    <td>Mateo Rodríguez</td>
-                    <td>Full Stack Developer</td>
-                    <td><a href="mailto:mateorodriguez@gmail.com">mateorodriguez@gmail.com</a></td>
                 </tr>
             </tbody>
 
             <tfoot>
                 <tr>
                     <td colspan="4">
-                        Total de empleados: 3
+                        Total de personal activo: <span class="conteoEmpleados">3</span> empleados
                     </td>
                 </tr>
             </tfoot>
