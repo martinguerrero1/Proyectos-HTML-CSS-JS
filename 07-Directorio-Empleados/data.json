@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "nombreCompleto": "Ana Gómez",
+    "puesto": "Frontend Developer",
+    "email": "ana@appwise.com"
+  },
+  {
+    "id": 2,
+    "nombreCompleto": "Carlos Ruiz",
+    "puesto": "Backend Developer",
+    "email": "carlos@appwise.com"
+  },
+  {
+    "id": 3,
+    "nombreCompleto": "Laura Silva",
+    "puesto": "UI/UX Designer",
+    "email": "laura@appwise.com"
+  },
+  {
+    "id": 4,
+    "nombreCompleto": "Diego Fernández",
+    "puesto": "Full Stack Developer",
+    "email": "diego@appwise.com"
+  },
+  {
+    "id": 5,
+    "nombreCompleto": "María López",
+    "puesto": "QA Tester",
+    "email": "maria@appwise.com"
+  },
+  {
+    "id": 6,
+    "nombreCompleto": "Javier Martínez",
+    "puesto": "DevOps Engineer",
+    "email": "javier@appwise.com"
+  },
+  {
+    "id": 7,
+    "nombreCompleto": "Sofía Torres",
+    "puesto": "Product Manager",
+    "email": "sofia@appwise.com"
+  },
+  {
+    "id": 8,
+    "nombreCompleto": "Lucas Pérez",
+    "puesto": "Mobile Developer",
+    "email": "lucas@appwise.com"
+  }
+]
