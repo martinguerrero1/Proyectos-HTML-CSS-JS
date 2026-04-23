@@ -8,15 +8,17 @@ renderizarProductos(productos);
 const btnAgregar = document.querySelectorAll('.btnAgregar');
 const listaCarrito = document.querySelector(".listaCarrito");
 
-let carrito = []
-let totalCarrito = 0
+let carrito = [];
+let itemIdCarrito = 0;
+let totalCarrito = 0;
 
 btnAgregar.forEach(boton => {
     boton.addEventListener("click", (evento) => {
         const productoId = evento.target.closest(".cartaProducto").id;
         const productoSeleccionado = productos.find(producto => producto.id === Number(productoId));
         
-        carrito.push(productoSeleccionado);
+        carrito.push({id: itemIdCarrito += 1, producto: productoSeleccionado});
+        // console.log(carrito)
         totalCarrito = calcularTotal(carrito);
         
         //actualizar la ui
@@ -24,8 +26,13 @@ btnAgregar.forEach(boton => {
     });
 })
 
-listaCarrito.addEventListener("click", event => {
-    if(event.target.classList === ".btnEliminar"){
-        event.target
+listaCarrito.addEventListener("click", evento => {
+    if(evento.target.classList.contains("btnEliminar")){
+        const itemId = evento.target.closest(".carritoProducto").id;
+
+        carrito = carrito.filter(item => item.id !== Number(itemId))
+
+        totalCarrito = calcularTotal(carrito);
+        renderizarCarrito(carrito, totalCarrito);
     }
 })

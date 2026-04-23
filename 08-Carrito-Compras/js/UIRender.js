@@ -1,3 +1,5 @@
+
+
 function renderizarProductos(productos){
     const grillaProductos = document.querySelector(".grillaProductos");
     grillaProductos.textContent = '' ;
@@ -18,14 +20,15 @@ function renderizarProductos(productos){
 function renderizarCarrito(carrito, importeTotal){
     const listaCarrito = document.querySelector(".listaCarrito");
     const totalCarrito = document.querySelector(".total");
+    const btnCarrito = document.querySelector('.btnCarrito');
 
-    listaCarrito.textContent = "";
-    carrito.forEach(producto => {
+    listaCarrito.textContent = '';
+    carrito.forEach(item => {
         listaCarrito.innerHTML += `
-                    <li class="carritoProducto" id="${producto.id}">
-                        <p class="carrito-producto">${producto.nombre}</p>
+                    <li class="carritoProducto" id="${item.id}">
+                        <p class="carrito-producto">${item.producto.nombre}</p>
                         <div>
-                            <p class="carrito-precio">$${producto.precio}</p>
+                            <p class="carrito-precio">$${item.producto.precio}</p>
                             <button type="button" class="btnEliminar">❌</button>
                         </div>
                     </li>
@@ -34,6 +37,15 @@ function renderizarCarrito(carrito, importeTotal){
 
 
     totalCarrito.textContent = importeTotal;
+    btnCarrito.textContent = carrito.length;
+    
+    if(carrito.length === 0){
+        listaCarrito.innerHTML = `
+                    <li>
+                        <p>ELIGE UN PRODUCTO QUE QUIERAS COMPRAR</p>
+                    </li>
+        `;
+    }
 }
 
 export {renderizarProductos, renderizarCarrito};
