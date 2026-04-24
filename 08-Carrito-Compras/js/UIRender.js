@@ -1,5 +1,3 @@
-
-
 function renderizarProductos(productos){
     const grillaProductos = document.querySelector(".grillaProductos");
     grillaProductos.textContent = '' ;

@@ -10,9 +10,7 @@ const board = document.querySelector(".tasks");
 const clearCompleted = document.querySelector(".clearCompleted")
 
 //buscamos las tareas en el LS o definimos un objeto vacio si no existe
-let localStorageTasks = JSON.parse(localStorage.getItem("Tasks")) || {};
-console.log(localStorageTasks);
-updateTasks(localStorageTasks);
+let localStorageTasks = JSON.parse(localStorage.getItem("Tasks")) || [];
 
 //agregar al form
 form.addEventListener("submit", e => {
