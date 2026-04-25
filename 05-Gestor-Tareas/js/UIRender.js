@@ -1,17 +1,24 @@
 const board = document.querySelector(".board");
+const pendingTasks = document.querySelector("#pendingTasks");
 
-export function renderizarTareas(tareas){
+function renderizarTareas(tareas){
     board.textContent = '';
 
     tareas.forEach(tarea => {
         board.innerHTML += `
-            <li id="${tarea.id}">
+            <li class="task" id="${tarea.id}">
                 <span>
                     <input class="checkbox" type="checkbox" ${tarea.completed ? 'checked' : ''}>
                     <p>${tarea.task}</p>
                 </span>
-                <button>❌</button>
+                <button class="deleteBtn">❌</button>
             </li>
         `
     });
+
+
+    const tareasPendientes = tareas.filter(tarea => tarea.completed === false);
+    pendingTasks.textContent = tareasPendientes.length;
 }
+
+export {board, renderizarTareas}
