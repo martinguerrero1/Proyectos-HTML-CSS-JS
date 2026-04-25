@@ -72,7 +72,8 @@ body{
 }
 
 /* lista tareas */
-.tasks{
+
+.board{
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -82,7 +83,7 @@ body{
     border-bottom: #b8b8b8 1px solid;
 }
 
-.tasks span{
+.board span{
     display: flex;
     gap: 10px;
 }
@@ -91,7 +92,7 @@ body{
     transform: scale(1.5);
 }
 
-.tasks li{
+.board li{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -106,15 +107,16 @@ body{
 }
 
 /* footer? */
-.info{
+.footer{
     display: flex;
     justify-content: space-between;
 
     width: 100%;
 }
 
-.info p{
+#pendingTasks{
     color: rgb(71, 71, 71);
+    font-weight: bold;
 }
 
 .clearCompleted{

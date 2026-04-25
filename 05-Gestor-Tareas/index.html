@@ -7,21 +7,21 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <sectio class="card">
-        <h1 class="tittle">Mis tareas pendientes</h1>
+    <section class="card">
+        <h1>Mis tareas pendientes</h1>
 
-        <form class="addTask" id="form">
-            <input type="text" placeholder="¿Qué necesitas hacer hoy?" id="inputTask">
-            <button type="submit">Agregar tarea</button>
-        </form>
+        <div class="addTask">
+            <input type="text" placeholder="¿Qué necesitas hacer hoy?" id="taskInput">
+            <button id="addTaskButton">Agregar tarea</button>
+        </div>
 
-        <ul class="tasks">
+        <ul class="board">
             <li>
                 <span>
                     <input class="checkbox" type="checkbox">
                     <p>Estudiar etiquetas semánticas</p>
                 </span>
-                <button type="button">❌</button>
+                <button>❌</button>
             </li>
             <li>
                 <span>
@@ -40,13 +40,15 @@
             </li>
         </ul>
 
-        <div class="info">
-            <p>Tienes <span id="pendingTasks" style="font-weight: bold;">2</span> tareas pendientes.</p>
+        <div class="footer">
+            <p>
+                Tienes <span id="pendingTasks">2</span> tareas pendientes.
+            </p>
             <button type="button" class="clearCompleted">Limpiar completadas</button>
         </div>
     </section>
 
 
-    <script src="app.js"></script>
+    <script type="module" src="./js/App.js"></script>
 </body>
 </html>
