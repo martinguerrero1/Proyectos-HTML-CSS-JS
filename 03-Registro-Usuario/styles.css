@@ -2,8 +2,8 @@
     text-decoration: none;
     list-style: none;
     color: inherit;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;;
-    margin: 0
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    margin: 0;
 }
 
 :root{
@@ -19,7 +19,7 @@
 
 body{
     background: linear-gradient(45deg, var(--background1), var(--background2));
-    height: 100vh;
+    height: 100%;
     display: flex;
     justify-content: center;
 }
@@ -33,6 +33,7 @@ body{
     margin: auto;
 
     gap: 20px;
+    margin: 20px;
 }
 
 h1{
@@ -46,7 +47,7 @@ form{
 
     background-color: #fff;
     border-radius: 10px;
-    padding: 50px;
+    padding: 30px;
 }
 
 form .especialidad{
@@ -70,6 +71,9 @@ form .input-text{
     border-radius: 5px;
     padding: 0 15px;
 }
+.labelNacimiento{
+    padding-top: 3px;
+}
 
 select{
     height: 40px;
@@ -91,7 +95,7 @@ button{
 
     color: var(--primaryText);
     font-weight: 800;
-    font-size: large;
+    font-size: me;
     border: none;
 }
 

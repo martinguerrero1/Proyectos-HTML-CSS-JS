@@ -106,6 +106,14 @@ body{
     border-radius: 10px;
 }
 
+.board .noTasks{
+    color: #414141;
+    text-align: center;
+    justify-content: center;
+    height: 80px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
 /* footer? */
 .footer{
     display: flex;

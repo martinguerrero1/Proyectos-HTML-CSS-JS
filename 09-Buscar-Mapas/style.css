@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    border: 0;
+}
+
+:root{
+    --bodyBg: #e7e7e7; 
+}
+
+body{
+    background-color: var(--bodyBg);
+    border: 1px rgb(19, 0, 128) solid;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    width: 100%;
+}
+
+/* HEADERRRRRRRRR */
+header{
+    background-color: white;
+    height: 20%;
+    text-align: center;
+    align-content: center;
+}
+header h1{
+    margin-bottom: 5px;
+}
+
+header p{
+    color: rgb(58, 58, 58);
+}
+
+
+/* MAINNNNNNNNNNNNNN */
+main{
+    display: flex;
+    height: 100%;
+    justify-content: end;
+    width: 100%;
+
+    /* border: 1px green solid; */
+ }
+
+section{
+    display: grid;
+    grid-template-columns: 60% 40%;
+    height: 60%;
+    margin-top: 30px;
+    width: 80%;
+}
+.mapa{
+    border-radius: 15px 0 0 15px;
+    overflow: hidden;
+}
+
+iframe{
+    height: 100%;
+    width: 100%;
+}
+
+aside{
+    background-color: #fff;
+    padding: 25px;
+}
+
+aside h2{
+    border-bottom: 1px #aaaaaa solid;
+    padding-bottom: 10px;
+    font-size: 2vw;
+}
+
+aside ul{
+    padding-top: 20px;
+}
+
+aside li{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.titulo{
+    color: #368dff;
+    font-size: 1.5vw;
+}
+
+.direccion{
+    color: #242424;
+    font-size: 1.3vw;
+}
+
+.horario{
+    color: #636363;
+    font-size: 1vw;
+}
+
+.btnIndicaciones{
+    border-radius: 8px;
+    border: 1px  #368dff solid;
+    color: #368dff;
+    font-size: small;
+    font-weight: bold;
+    padding: 8px 15px;
+    width: fit-content;
+}
+
+hr{
+    background-color: #aaaaaa;
+    height: 1px;
+    margin-bottom: 10px;
+}

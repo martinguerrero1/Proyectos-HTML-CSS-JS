@@ -1,4 +1,4 @@
-import {GuardarTarea, GenerarIdUnico, obtenerTareas, actualizarTareas, eliminarTarea, chequearTarea} from "./LocalStorage.js";
+import {guardarTarea, generarIdUnico, obtenerTareas, actualizarTareas, eliminarTarea, chequearTarea} from "./LocalStorage.js";
 import Task from "./Task.js";
 import { board, renderizarTareas } from "./UIRender.js";
 
@@ -16,8 +16,8 @@ addTaskButton.addEventListener("click", event => {
     const taskValue = taskInput.value;
 
     if(taskValue){
-    const taskInstance = new Task(GenerarIdUnico(), taskValue);
-    GuardarTarea(taskInstance);
+    const taskInstance = new Task(generarIdUnico(), taskValue);
+    guardarTarea(taskInstance);
 
     taskInput.value = '';
 
@@ -38,7 +38,7 @@ board.addEventListener("click", event => {
         renderizarTareas(obtenerTareas());
     }
 
-    //estado de la tarea
+    //estado de la tarea (checkbox)
     else if(event.target.classList.contains("checkbox")){
         const task = event.target.closest(".task");
 
@@ -50,8 +50,8 @@ board.addEventListener("click", event => {
         renderizarTareas(obtenerTareas());
     }
 })
-<
 
+//limpiar completadas
 deleteCompletedButton.addEventListener("click", event => {
     const tareasIncompletas = obtenerTareas().filter(tarea => tarea.completed === false);
     actualizarTareas(tareasIncompletas);
