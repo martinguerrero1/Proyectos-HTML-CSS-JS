@@ -4,16 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel - Appwise</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/dashboardStyle.css">
 </head>
 <body>
     <aside>
-        <h2>Appwise Admin</h2>
+        <h2 class="title">🚀 Appwise Admin</h2>
         <nav>
-            <ul>
-                <li>Dashboard</li>
-                <li>Usuario</li>
-                <li>Reportes</li>
-                <li>Configuración</li>
+            <ul class="list">
+                <li class="list-item"><button class="dashboard">📊 Dashboard</button></li>
+
+                <li class="list-item">
+                    <details>
+                        <summary>📋 Proyectos</summary>
+                        <ul class="sublist proyectos">
+                        </ul>
+                    </details>
+                </li>
+
+                <li class="list-item">
+                    <details>
+                        <summary>🕹️ Minijuegos</summary>
+                        <ul class="sublist minijuegos">
+                        </ul>
+                    </details>
+                </li>
             </ul>
         </nav>
     </aside>
@@ -22,56 +37,18 @@
     
     <main>
         <header>
-            <input type="search" name="" id="">
-            <img src="assets/avatar.png" alt="" height="50px">
-            <h3>Admin</h3>
+            <input type="search" name="" id="" class="searcher" placeholder="Buscar proyecto...">
+            <div class="profile">
+                <p>Hola, <span class="profile-username">Admin</span></p>
+                <img src="assets/avatar.png" alt="" height="50px" width="50px">
+            </div>
         </header>
 
-        <section>
-            <h2>Actividad reciente</h2>
-            <table border="1">
-                <thead>
-                    <tr>
-                        <th>Fecha</th>
-                        <th>Usuario</th>
-                        <th>Acción</th>
-                        <th>Estado</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <tr>
-                        <td>08/03/2026</td>
-                        <td>Juan Pérez</td>
-                        <td>Inicio de sesión</td>
-                        <td>Exitoso</td>
-                    </tr>
-                    <tr>
-                        <td>08/03/2026</td>
-                        <td>María López</td>
-                        <td>Actualizó perfil</td>
-                        <td>Completado</td>
-                    </tr>
-                    <tr>
-                        <td>09/03/2026</td>
-                        <td>Carlos Gómez</td>
-                        <td>Cambio de contraseña</td>
-                        <td>Pendiente</td>
-                    </tr>
-                </tbody>
-            </table>
+        <section class="main-content">
+            <iframe src="" frameborder="0" class="proyect-render"></iframe>
         </section>
     </main>
 
-    <dialog open="">
-        <h3>Añadir nuevo usuario</h3>
-        <form action="">
-            <label for="nombre">Nombre</label>
-            <input type="text" name="" id="nombre">
-
-            <button type="button">Cancelar</button>
-            <button type="submit">Guardar</button>
-        </form>
-    </dialog>
+    <script type="module" src="js/app.js"></script>
 </body>
 </html>
