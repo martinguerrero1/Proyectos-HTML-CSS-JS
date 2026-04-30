@@ -4,7 +4,8 @@ const sublistProyectos = document.querySelector(".sublist.proyectos");
 const sublistMinijuegos = document.querySelector(".sublist.minijuegos");
 
 const iframeProyecto = document.querySelector(".proyect-render");
-const iframeDashboard = document.querySelector(".dashboard-render");
+//DASHBOARD
+const dashboardDiv = document.querySelector(".dashboard-container");
 
 function renderizarSidebar(){
     Proyectos.forEach(proyecto => {
@@ -25,43 +26,40 @@ function renderizarSidebar(){
 
 function renderizarDashboard(){
     iframeProyecto.hidden = true;
-    iframeDashboard.hidden = false;
+    dashboardDiv.style.display = "flex";
 }
 
 function renderizarProyecto(url){
-    iframeDashboard.hidden = true;
+    dashboardDiv.style.display = "none";
     iframeProyecto.hidden = false;
     iframeProyecto.src = url;
 }
 
 
-//TRABAJO CON EL IFRAME DE DASHBOARD.HTML
-const iframeDoc = iframeDashboard.contentDocument;
-
 const proyectosMinijuegos = [...Proyectos, ...Minijuegos];
-const grillaBusqueda = iframeDoc.querySelector(".grilla-container");
-
-function desaparecerBusqueda(){
-    grillaBusqueda.hidden = true;
-};
+const grillaContainer = document.querySelector(".grilla-container")
 
 function buscarProyectos(busqueda){
-    grillaBusqueda.hidden = false;
-    grillaBusqueda.textContent = '';
+    grillaContainer.textContent = '';
 
-    const grillaProyectos = iframeDoc.createElement("section");
+    const grillaProyectos = document.createElement("section");
     grillaProyectos.classList.add("grilla-proyectos");
+    
+    const arrayFilter = proyectosMinijuegos.filter(proyecto => (proyecto.name).toLocaleLowerCase().includes(busqueda));
 
-    const arrayFilter = proyectosMinijuegos.filter(proy => proy.name.includes(busqueda));
     arrayFilter.forEach(proy => {
         grillaProyectos.innerHTML += `
             <div data-id="${proy.id}" class="card">
-                <p class="emoji">🕹️</p>
+                <p class="emoji">${proy.emoji}</p>
                 <p class="name">${proy.name}</p>
             </div>
         `;
     })
-    grillaBusqueda.appendChild(grillaProyectos);
+    grillaContainer.appendChild(grillaProyectos);
 }
 
-export {renderizarSidebar, renderizarDashboard, renderizarProyecto, buscarProyectos, desaparecerBusqueda}
+function desaparecerBusqueda(){
+    grillaContainer.textContent = '';
+};
+
+export {renderizarSidebar, renderizarDashboard, renderizarProyecto, buscarProyectos, desaparecerBusqueda, proyectosMinijuegos}
