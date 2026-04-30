@@ -1,4 +1,4 @@
-import { renderizarSidebar, renderizarDashboard, renderizarProyecto } from "./RenderUI.js";
+import { renderizarSidebar, renderizarDashboard, renderizarProyecto, buscarProyectos, desaparecerBusqueda } from "./RenderUI.js";
 import { Proyectos, Minijuegos } from "./Links.js";
 
 renderizarSidebar();
@@ -26,7 +26,7 @@ linkButtons.forEach(button => {
 });
 
 // BOTON DASHBOARD
-const dashboardButton = document.querySelector(".dashboard");
+const dashboardButton = document.querySelector(".dashboard-item");
 
 dashboardButton.addEventListener("click", event => {
     renderizarDashboard();
@@ -48,13 +48,16 @@ acordeonMinijuegos.addEventListener("click", event => {
     }
 })
 
-// const acordeones = document.querySelectorAll(".acordeon")
+//BUSCADOR
+const buscador = document.querySelector(".searcher");
 
-// acordeones.forEach(acordeon => {
-//     acordeon.addEventListener("toggle", event => {
-//         switch(event.currentTarget){
-//             case acordeones[0]:
-//                 acordeon
-//         }
-//     })
-// })
+buscador.addEventListener("input", event => {
+    const busqueda = buscador.value;
+    if(busqueda){
+        buscarProyectos(busqueda);
+        console.log(busqueda)
+    }
+    else if (busqueda === ""){
+        desaparecerBusqueda();
+    }
+})

@@ -11,10 +11,10 @@ export const Proyectos = [
 ];
 
 export const Minijuegos = [
-    {id: 1, name: 'Oraculo', url: 'https://martinguerrero1.github.io/Oraculo/'},
-    {id: 2, name: 'Piedra, papel o tijeras', url: 'https://martinguerrero1.github.io/PPT/'},
-    {id: 3, name: 'Memotest', url: 'https://martinguerrero1.github.io/Memotest/'},
-    {id: 4, name: 'Whack a mole', url: 'https://martinguerrero1.github.io/Whack-A-Mole/'},
-    {id: 5, name: 'Clicker miner', url: 'https://martinguerrero1.github.io/Clicker/'},
-    {id: 6, name: 'Ping Pong', url: 'https://martinguerrero1.github.io/PingPong/'}
+    {id: 10, name: 'Oraculo', url: 'https://martinguerrero1.github.io/Oraculo/'},
+    {id: 11, name: 'Piedra, papel o tijeras', url: 'https://martinguerrero1.github.io/PPT/'},
+    {id: 12, name: 'Memotest', url: 'https://martinguerrero1.github.io/Memotest/'},
+    {id: 13, name: 'Whack a mole', url: 'https://martinguerrero1.github.io/Whack-A-Mole/'},
+    {id: 14, name: 'Clicker miner', url: 'https://martinguerrero1.github.io/Clicker/'},
+    {id: 15, name: 'Ping Pong', url: 'https://martinguerrero1.github.io/PingPong/'}
 ];

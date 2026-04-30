@@ -27,10 +27,41 @@ function renderizarDashboard(){
     iframeProyecto.hidden = true;
     iframeDashboard.hidden = false;
 }
+
 function renderizarProyecto(url){
     iframeDashboard.hidden = true;
     iframeProyecto.hidden = false;
     iframeProyecto.src = url;
 }
 
-export {renderizarSidebar, renderizarDashboard, renderizarProyecto}
+
+//TRABAJO CON EL IFRAME DE DASHBOARD.HTML
+const iframeDoc = iframeDashboard.contentDocument;
+
+const proyectosMinijuegos = [...Proyectos, ...Minijuegos];
+const grillaBusqueda = iframeDoc.querySelector(".grilla-container");
+
+function desaparecerBusqueda(){
+    grillaBusqueda.hidden = true;
+};
+
+function buscarProyectos(busqueda){
+    grillaBusqueda.hidden = false;
+    grillaBusqueda.textContent = '';
+
+    const grillaProyectos = iframeDoc.createElement("section");
+    grillaProyectos.classList.add("grilla-proyectos");
+
+    const arrayFilter = proyectosMinijuegos.filter(proy => proy.name.includes(busqueda));
+    arrayFilter.forEach(proy => {
+        grillaProyectos.innerHTML += `
+            <div data-id="${proy.id}" class="card">
+                <p class="emoji">🕹️</p>
+                <p class="name">${proy.name}</p>
+            </div>
+        `;
+    })
+    grillaBusqueda.appendChild(grillaProyectos);
+}
+
+export {renderizarSidebar, renderizarDashboard, renderizarProyecto, buscarProyectos, desaparecerBusqueda}
