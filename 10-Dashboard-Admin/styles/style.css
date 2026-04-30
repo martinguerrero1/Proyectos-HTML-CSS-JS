@@ -16,7 +16,9 @@
 body{
     display: grid;
     font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
     grid-template-columns: 18% auto;
+    
     height: 100vh;
     width: 100vw;
 }
@@ -123,7 +125,11 @@ header{
     width: 90%;
     height: 90%;
     box-shadow: 2px 2px 6px 2px #1e1f20;
-    /* display: none; */
+}
+
+.dashboard-render{
+    width: 100%;
+    height: 100%;
 }
 
 button{

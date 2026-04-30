@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel - Appwise</title>
     <link rel="stylesheet" href="./styles/style.css">
-    <link rel="stylesheet" href="./styles/dashboardStyle.css">
 </head>
 <body>
     <aside>
@@ -15,7 +14,7 @@
                 <li class="list-item"><button class="dashboard">📊 Dashboard</button></li>
 
                 <li class="list-item">
-                    <details>
+                    <details class="acordeonProyectos acordeon">
                         <summary>📋 Proyectos</summary>
                         <ul class="sublist proyectos">
                         </ul>
@@ -23,7 +22,7 @@
                 </li>
 
                 <li class="list-item">
-                    <details>
+                    <details class="acordeonMinijuegos acordeon">
                         <summary>🕹️ Minijuegos</summary>
                         <ul class="sublist minijuegos">
                         </ul>
@@ -45,7 +44,9 @@
         </header>
 
         <section class="main-content">
-            <iframe src="" frameborder="0" class="proyect-render"></iframe>
+            <iframe src="./dashboard.html" frameborder="0" class="dashboard-render"></iframe>
+
+            <iframe src="" frameborder="0" class="proyect-render" hidden></iframe>
         </section>
     </main>
 

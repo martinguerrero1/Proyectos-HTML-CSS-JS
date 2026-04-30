@@ -3,7 +3,10 @@ import {Proyectos, Minijuegos} from "./Links.js";
 const sublistProyectos = document.querySelector(".sublist.proyectos");
 const sublistMinijuegos = document.querySelector(".sublist.minijuegos");
 
-export function renderizarSidebar(){
+const iframeProyecto = document.querySelector(".proyect-render");
+const iframeDashboard = document.querySelector(".dashboard-render");
+
+function renderizarSidebar(){
     Proyectos.forEach(proyecto => {
         sublistProyectos.innerHTML += `
         <li class="sublist-item">
@@ -21,5 +24,13 @@ export function renderizarSidebar(){
 }
 
 function renderizarDashboard(){
-    
+    iframeProyecto.hidden = true;
+    iframeDashboard.hidden = false;
 }
+function renderizarProyecto(url){
+    iframeDashboard.hidden = true;
+    iframeProyecto.hidden = false;
+    iframeProyecto.src = url;
+}
+
+export {renderizarSidebar, renderizarDashboard, renderizarProyecto}
