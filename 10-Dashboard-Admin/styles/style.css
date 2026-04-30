@@ -20,7 +20,7 @@ body{
     grid-template-columns: 18% auto;
     
     height: 100vh;
-    width: 100vw;
+    width: 100%;
 }
 
 aside{
@@ -82,17 +82,10 @@ main{
 header{
     display: flex;
     justify-content: space-between;
+    gap: 1em;
     align-items: center;
     padding: 0 40px
 }
-
-.profile{
-    display: flex;
-    gap: 10px;
-    height: fit-content;
-    align-items: center;
-}
-
 
 .searcher{
     border: 1px rgb(185, 185, 185) solid;
@@ -100,6 +93,13 @@ header{
     height: 50%;
     width: 300px;
     padding: 0 10px
+}
+
+.profile{
+    display: flex;
+    gap: 1em;
+    height: fit-content;
+    align-items: center;
 }
 
 .profile img{

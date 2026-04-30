@@ -1,9 +1,10 @@
-import { renderizarSidebar, renderizarDashboard, renderizarProyecto, buscarProyectos, desaparecerBusqueda } from "./RenderUI.js";
+import { renderizarSidebar, renderizarDashboard, renderizarProyecto, buscarProyectos, desaparecerBusqueda, proyectosMinijuegos} from "./RenderUI.js";
 import { Proyectos, Minijuegos } from "./Links.js";
 
+// console.log((proyectosMinijuegos[0].name).toLocaleLowerCase())
 renderizarSidebar();
 
-// BOTONES PROYECTOS Y MINIJUEGOS
+// BOTONES PROYECTOS Y MINIJUEGOS DEL SIDEBAR
 const linkButtons = document.querySelectorAll(".sublist-item-button");
 const iframeProyecto = document.querySelector(".proyect-render");
 
@@ -25,7 +26,7 @@ linkButtons.forEach(button => {
     })
 });
 
-// BOTON DASHBOARD
+// BOTON DASHBOARD DEL SIDEBAR
 const dashboardButton = document.querySelector(".dashboard-item");
 
 dashboardButton.addEventListener("click", event => {
@@ -52,12 +53,27 @@ acordeonMinijuegos.addEventListener("click", event => {
 const buscador = document.querySelector(".searcher");
 
 buscador.addEventListener("input", event => {
-    const busqueda = buscador.value;
+    const busqueda = ((buscador.value).trim()).toLocaleLowerCase();
+
+    //si busqueda existe
     if(busqueda){
-        buscarProyectos(busqueda);
-        console.log(busqueda)
+        //renderiza los proyectos que coinciden
+        buscarProyectos(busqueda);     
+        
+        //por cada proyecto llamado (con la clase card)...
+        const cards = document.querySelectorAll(".card");
+        //se le agrega un listener para obtener el id y asi linkearlo con la url y poder renderizarlo en el main content
+        cards.forEach(card => {
+            card.addEventListener("click", event => {
+                let id = event.currentTarget.dataset.id
+                let url = proyectosMinijuegos.find(proyecto => proyecto.id === Number(id)).url;
+                renderizarProyecto(url);
+            })
+        })
     }
+
+    //si busqueda no existe desaparece el contenedor
     else if (busqueda === ""){
         desaparecerBusqueda();
     }
-})
+});

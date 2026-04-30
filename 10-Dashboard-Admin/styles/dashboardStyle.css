@@ -12,7 +12,7 @@
     --maincontentBg: #f1f5f9;
 }
 
-body{
+.dashboard-container{
     background-color: var(--maincontentBg);
     display: flex;
     flex-direction: column;
@@ -95,13 +95,7 @@ td,th{
 tfoot{
     text-align: center;
 }
-
-.noDisplay{
-    display: none;
-}
 /* GRILLA PROYECTOS */
-.grilla-container{
-}
 
 .grilla-proyectos{
     display: grid;
@@ -117,6 +111,7 @@ tfoot{
     text-align: center;
     background-color: #fff;
     box-shadow: 2px 2px 10px 2px #b5c0cc82;
+    cursor: pointer;
 }
 
 .emoji{
