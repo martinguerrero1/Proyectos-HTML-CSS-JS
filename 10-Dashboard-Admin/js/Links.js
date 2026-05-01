@@ -16,5 +16,6 @@ export const Minijuegos = [
     {id: 12, name: 'Memotest', emoji: '🧠', url: 'https://martinguerrero1.github.io/Memotest/'},
     {id: 13, name: 'Whack a mole', emoji: '🐹', url: 'https://martinguerrero1.github.io/Whack-A-Mole/'},
     {id: 14, name: 'Clicker miner', emoji: '⛏️', url: 'https://martinguerrero1.github.io/Clicker/'},
-    {id: 15, name: 'Ping Pong', emoji: '🏓', url: 'https://martinguerrero1.github.io/PingPong/'}
+    {id: 15, name: 'Ping Pong', emoji: '🏓', url: 'https://martinguerrero1.github.io/PingPong/'},
+    {id: 16, name: 'Colisiones', emoji: '🚘', url: 'https://martinguerrero1.github.io/Colisiones/'}
 ];
