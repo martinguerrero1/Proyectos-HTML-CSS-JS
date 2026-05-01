@@ -11,11 +11,15 @@
     --bodyBg: #e7e7e7; 
 }
 
+html{
+    height: 100%;
+}
+
 body{
     background-color: var(--bodyBg);
     border: 1px rgb(19, 0, 128) solid;
     font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    height: 100vh;
+    height: 100%;
     overflow: hidden;
     width: 100%;
 }
@@ -23,7 +27,7 @@ body{
 /* HEADERRRRRRRRR */
 header{
     background-color: white;
-    height: 20%;
+    height: 18%;
     text-align: center;
     align-content: center;
 }
@@ -50,7 +54,7 @@ section{
     display: grid;
     grid-template-columns: 60% 40%;
     height: 60%;
-    margin-top: 30px;
+    margin-top: 1em;
     width: 80%;
 }
 .mapa{
